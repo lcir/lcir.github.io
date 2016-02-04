@@ -201,9 +201,9 @@
 <p>  Jak je z příkazu vidět, je zde použito linkování tohoto samostatného kontejneru na kontejnery spuštěné pomocí Docker compose. Tímto způsobem jsme schopni videt na nástroje, které jsme již spustili. </p>
 <p>  Abych to vysvětlil. Docker si vytváří svoji interní síť a registruje do ní kontejnery. Pokud si nevytvoříme svoji síť a explicitně ji do konfigurace nedoplníme, použije se výchozí síť dockeru. Každému kontejneru je přidělena IP a hostname. Hostname s container_name se buď generuje, nebo je možné jej explicitně specifikovat. Jakmile na nově spouštěném kontejneru specifikujeme  propojení jiného kontejneru linkováním, zanese si informaci o IP a hostname linkovaného kontejneru do /etc/hosts.</p>
 <p>  Ve zkratce jsem schopen říct, že jsme eliminivali samostatným spuštěním kontejneru s Mavenem hned dva problémy. První eliminovaný probém je již zmíněné mapování portů na hostovi. Veškerá tcp/udp konverzace probíhá uvnitř virtuální Docker sítě, a proto není potřeba publikovat žádný port ven z Docker infrastruktury. Druhým eliminovaným problémem je nepředávání řízení Jenkinsu po ukončení testování. Jakmile Maven v kontejneru skončí, kontejner se sám vypne a předá řízení opět Jenkinsu.</p>
-<p>  Následuje již zmíněné:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose kill&#10;docker-compose rm -f</span><br></pre></td></tr></table></figure></p>
+<p>  Následuje již zmíněné:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose kill&#10;&#10;docker-compose rm -f</span><br></pre></td></tr></table></figure></p>
 <p>  Stále ale ve vzduchu visí jeden problém. Co když se nestihnou spustit kontejnery z Docker compose dříve, než se budeme snažit nastartovat kontejner s Mavenem. V negativním scénáři, kdy se opravdu nepodaří spustit kontejnery, spuštění Maven kontejneru skončí s chybovým hlášením, že neexistují linkované kontejnery. Problém lze eliminivat tak, že po spuštění compose chvilku vyčkáme:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up &#38;&#10;sleep 5</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up &#38;&#10;&#10;sleep 5</span><br></pre></td></tr></table></figure>
 <p> Stačí opravdu krátká doba. Zde nečekáme na to, až se nástroje uvnitř kontejneru spustí. Zde se čeká jen na start samostatného kontejneru. Do Docker sítě se zaregistruje až spuštěný kontejner a ten je pak následně linkovatelný.</p>
 <p> Ale někdy potřebujeme vyčkat se spuštěním testů do doby, než se spustí i nástroje uvnitř kontejneru. Například nemůžeme pustit testy pracující s databází, pokud neběží MySQL. Zjisit, zda služba jede, je možné teoreticky v tuto chvíli jen z aktivního čekání v uspávaném cyklu. V cyklu je testována dostupnost tcp portu. Testuje se, zda port přijme spojení či ne. Celkově se cyklus chová jako bariéra. Dokud nejsou všechny podmínky na dostupnost splněny, tak se čeká. Po splnění obyvkle proces skončí, aby mohl pokračovat proces jiný. Aby byli naše podmínky splněné, musí tento čekací algoritmus běžet uvnitř dalšího Docker kontejneru, aby měl dostupné linkované kontejnery spuštěné z compose.</p>
 <p> Přesně toto jsme chtěli v našem testovacím procesu použít. Psát ale vlastní řešení nebo vymýšlet kolo, nebylo to pravé ořechové. Nakonec jsme narazili na aplikaci <a href="https://github.com/jwilder/dockerize" target="_blank" rel="external">Dockerize</a>, která splňovala přesně naše očekávání. Tato jednoduchá aplikace po splnění podmínek spustí jiný proces a skončí nebo pouze skončí.</p>
@@ -222,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ptw.cz/2016/02/01/Dockerization/" data-id="cik8qxc1v00002kfliz1ypwh4" class="article-share-link">Share</a>
+      <a data-url="http://blog.ptw.cz/2016/02/01/Dockerization/" data-id="cik8r0iiw00003eflflyjzfz4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -269,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ptw.cz/2016/01/28/Prvni-Post/" data-id="cik8qxc2400012kflorvcxeqn" class="article-share-link">Share</a>
+      <a data-url="http://blog.ptw.cz/2016/01/28/Prvni-Post/" data-id="cik8r0ijm00013eflfd59jfah" class="article-share-link">Share</a>
       
       
     </footer>
