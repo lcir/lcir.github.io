@@ -1,3 +1,247 @@
-<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Nějaký ten popis by to chtělo?"><title>archive | Pozdní odpoledne</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">Pozdní odpoledne</a><span class="subtitle"></span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item">Domů</a><a href="/archives" class="sidebar-nav-item active">Archív</a></div></nav><div id="header-margin-bar"></div><article><div class="container"><div class="post"><!-- show all categories and tags--><div class="all-categories"><ul class="tag-box list-unstyled"></ul></div><div class="all-tags"><ul class="tag-box list-unstyled"></ul></div><div class="post-archive"><!--Use lodash to classify posts. See https://lodash.com/docs#groupBy--><h2>2016</h2><ul class="listing"><li><span class="date">2016/02/01</span><a href="/2016/02/01/Dockerization/" title="Dokerizace v FG Forrest">Dokerizace v FG Forrest</a></li><li><span class="date">2016/01/28</span><a href="/2016/01/28/Prvni-Post/" title="První příspěvek">První příspěvek</a></li></ul></div></div></div></article><div class="container page-navigator-wrapper"></div><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="mailto:lukas.cir@ptw.cz" target="_blank"><i class="fa fa-envelope-o"></i></a><a href="http://twitter.com/lukascir" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/lcir" target="_blank"><i class="fa fa-github"></i></a><a href="https://plus.google.com/110631283049955355822" target="_blank"><i class="fa fa-google-plus"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2016 <a href="/" rel="nofollow">Pozdní odpoledne</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
-    $(".fancybox").fancybox();
-});</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives | Pozdní odpoledne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Nějaký ten popis by to chtělo?">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pozdní odpoledne">
+<meta property="og:url" content="http://blog.ptw.cz/archives/index.html">
+<meta property="og:site_name" content="Pozdní odpoledne">
+<meta property="og:description" content="Nějaký ten popis by to chtělo?">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pozdní odpoledne">
+<meta name="twitter:description" content="Nějaký ten popis by to chtělo?">
+  
+  
+    <link rel="icon" href="favicon.png">
+  
+  
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/hqdefault.jpg)"></i><span class="site-title">Pozdní odpoledne</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Domů</a>
+        
+          <a class="main-nav-link" href="/archives">Archív</a>
+        
+      </nav>
+      
+      <div id="search-form-wrap">
+        
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://blog.ptw.cz"></form>
+        
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Domů</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archív</a></td>
+        
+        <td>
+          
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://blog.ptw.cz"></form>
+          
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+    <div class="outer">
+      
+      <section id="main">
+      <div class="archive-year-wrap">
+        <a href="/archives/2016" class="archive-year">2016</a>
+      </div>
+      <section class="archives-wrap">
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    
+    <div class="archive-article-thumbnail">
+      <a href="/2016/02/01/Dockerization/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+    </div>
+    
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/02/01/Dockerization/">Dokerizace v FG Forrest</a>
+    </h1>
+  
+
+      
+        
+  <div class="archive-article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/02/01/Dockerization/">
+      <time datetime="2016-02-01T22:33:41.000Z" itemprop="datePublished">Feb 1</time>
+    </a>
+  </div>
+
+
+      
+    </header>
+  </div>
+</article>
+  
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    
+    <div class="archive-article-thumbnail">
+      <a href="/2016/01/28/Prvni-Post/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+    </div>
+    
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/01/28/Prvni-Post/">První příspěvek</a>
+    </h1>
+  
+
+      
+        
+  <div class="archive-article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/01/28/Prvni-Post/">
+      <time datetime="2016-01-28T20:47:04.000Z" itemprop="datePublished">Jan 28</time>
+    </a>
+  </div>
+
+
+      
+    </header>
+  </div>
+</article>
+  
+    </div></section>
+  </section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/01/Dockerization/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/02/01/Dockerization/" class="title">Dokerizace v FG Forrest</a></p>
+              <p class="item-date"><time datetime="2016-02-01T22:33:41.000Z" itemprop="datePublished">2016-02-01</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/01/28/Prvni-Post/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/01/28/Prvni-Post/" class="title">První příspěvek</a></p>
+              <p class="item-date"><time datetime="2016-01-28T20:47:04.000Z" itemprop="datePublished">2016-01-28</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Lukáš Cír<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

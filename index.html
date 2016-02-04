@@ -1,3 +1,335 @@
-<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Nějaký ten popis by to chtělo?"><title>Pozdní odpoledne | null</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">Pozdní odpoledne</a><span class="subtitle"></span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Domů</a><a href="/archives" class="sidebar-nav-item">Archív</a></div></nav><div id="header-margin-bar"></div><article><div id="index-main" class="container entries"><div class="post-entry"><div class="post-time">2016-02-01</div><div class="post-desc"><div class="post-title"><a href="/2016/02/01/Dockerization/">Dokerizace v FG Forrest</a></div><div class="post-content"><p>Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno jsme se rozhodli i my v FG Forrest, že tuto technologii vyzkoušíme a zařadíme do běžného workflow našich aplikací.</p></div><div class="post-meta"></div></div></div><div class="post-entry"><div class="post-time">2016-01-28</div><div class="post-desc"><div class="post-title"><a href="/2016/01/28/Prvni-Post/">První příspěvek</a></div><div class="post-content"><p>Tak a je to tu, založil jsem si blog. Důvodem založení, je nutnost ventilovat své myšlenky ohledně devs, testovám, hrátek s Dockerem a plánovaní akciček. Dalším námětem budou reporty a zápisky z přednášek.</p></div><div class="post-meta"></div></div></div></div></article><div class="container page-navigator-wrapper"></div><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="mailto:lukas.cir@ptw.cz" target="_blank"><i class="fa fa-envelope-o"></i></a><a href="http://twitter.com/lukascir" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/lcir" target="_blank"><i class="fa fa-github"></i></a><a href="https://plus.google.com/110631283049955355822" target="_blank"><i class="fa fa-google-plus"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2016 <a href="/" rel="nofollow">Pozdní odpoledne</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
-    $(".fancybox").fancybox();
-});</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Pozdní odpoledne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Nějaký ten popis by to chtělo?">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pozdní odpoledne">
+<meta property="og:url" content="http://blog.ptw.cz/index.html">
+<meta property="og:site_name" content="Pozdní odpoledne">
+<meta property="og:description" content="Nějaký ten popis by to chtělo?">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pozdní odpoledne">
+<meta name="twitter:description" content="Nějaký ten popis by to chtělo?">
+  
+  
+    <link rel="icon" href="favicon.png">
+  
+  
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/hqdefault.jpg)"></i><span class="site-title">Pozdní odpoledne</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Domů</a>
+        
+          <a class="main-nav-link" href="/archives">Archív</a>
+        
+      </nav>
+      
+      <div id="search-form-wrap">
+        
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://blog.ptw.cz"></form>
+        
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Domů</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archív</a></td>
+        
+        <td>
+          
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://blog.ptw.cz"></form>
+          
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+    <div class="outer">
+      
+      <section id="main">
+      <article id="post-Dockerization" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/01/Dockerization/">Dokerizace v FG Forrest</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/02/01/Dockerization/">
+      <time datetime="2016-02-01T22:33:41.000Z" itemprop="datePublished">2016-02-01</time>
+    </a>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno jsme se rozhodli i my v FG Forrest, že tuto technologii vyzkoušíme a zařadíme do běžného workflow našich aplikací.</p>
+<p>Předpokládám, že všichni víte, co je to Docker. Pokud ne, doporučuji si poslechnout přednášku <a href="https://www.youtube.com/watch?v=UIqpyHoIHuo" target="_blank" rel="external">Martina Damovského</a> a <a href="https://www.youtube.com/watch?v=yluC15kbbv4" target="_blank" rel="external">Radima Dana Pánka</a>, jejichž vystoupeni byla naše firma partnerem. </p>
+<h2 id="Co_od_toho_o_u010Dek_E1v_E1me_3F"><a href="#Co_od_toho_o_u010Dek_E1v_E1me_3F" class="headerlink" title="Co od toho očekáváme?"></a>Co od toho očekáváme?</h2><p>To je jednoduchá otázka s jednoduchou odpovědí - zjednodušení práce.  </p>
+<h3 id="Co_n_E1m_m_u016F_u017Ee_Docker_p_u0159in_E9st_3F"><a href="#Co_n_E1m_m_u016F_u017Ee_Docker_p_u0159in_E9st_3F" class="headerlink" title="Co nám může Docker přinést?"></a>Co nám může Docker přinést?</h3><ul>
+<li>Pomoc v integračním testování</li>
+<li>Sjednocení verzí a konfigurace služeb na dev/test/prod</li>
+<li>Síťovou “virtualizaci” mezi kontejnery</li>
+<li>Usnadnění deploymentu</li>
+<li>Rychlejší spuštění archaických aplikací</li>
+<li><p>Sdílení stavů aplikací a databází mezi vývojem a testem</p>
+<h2 id="Sjednocen_ED_verz_ED"><a href="#Sjednocen_ED_verz_ED" class="headerlink" title="Sjednocení verzí"></a>Sjednocení verzí</h2><p>Vzhledem k tomu, že firma FG Forrest je už nějakou chvilku na trhu, disponuje velkou škálou klientských aplikací. Některé aplikace běží například na Java 5 nebo starších verzí MySQL 5. Tyto nástroje jsou v dnešní době už těžko sehnatelné a velmi komplikovaně spustitelné na platformách jako je Mac OSX a jiné.</p>
+</li>
+</ul>
+<p> Pokud na takových aplikacích probíhal i nyní nový vývoj, musel vývojář používat verzi nástroje jinou, než na které pojede aplikace na produkci. Tento stav je nežádoucí, jelikož nástroje se mouhou verze od verze lišit. Například tomu tak je u MySQL 5. Zde Oracle pod odkoupení Sun Microsystems změnil SQL definice a syntax.</p>
+<p> Další kapitolou jsou testy. Máme CI Jenkins, kde probíhá testování opět velké škály aplikací. Bohužel se ale pro spouštění Unit testů používá jediná MySQL databáze k tomu určená. Pro velkou množinu aplikací je tato MySQL databáze zastaralá oproti produkci.</p>
+<p> Vše, co jsem popsal, mohlo a také nejednou zapříčinilo problém. Proto dokerizace nástrojů jako MySQL, Elasticsearch a následné používání konkrétní verze jejich image, zajistí určitou chtěnou uniformitu prostředí. V tomto případě jsme začali sestavovat vlastní image nástrojů. Můžeme tak používat stejnou verzi nástroje na produkci i pro testy a vývoj.</p>
+<h2 id="Docker_pro_usnadn_u011Bn_ED_deploymentu"><a href="#Docker_pro_usnadn_u011Bn_ED_deploymentu" class="headerlink" title="Docker pro usnadnění deploymentu"></a>Docker pro usnadnění deploymentu</h2><p> To je jedna z hlavních výhod, kterou se Docker prezentuje. Usnadní deploy aplikace na server. Má to ale jeden podstatný háček. A to, že aktivně instalovaná aplikace bude mít vždy vyšší výkon. Možná nepatrně, ale bude. Proto se nedoporučuje dokerizovat na produkci například databázi.</p>
+<p> Naše aplikace, ale používají kromě databází další podpůrné nástroje. Používáme vlastní mikroslužby pro generování PDF nebo streamování videa. A přesně deployment těchto aplikací je učebnicový příklad využití Dockeru. Pomocí CI si sestavíme image s tímto nástrojem a pro vývoj, testy, produkci můžeme distribuovat už pouze jen home-build image. Rozjetí takové aplikace je pak otázkou chvilky i pro neznalého.</p>
+<h2 id="Starod_E1vn_E9_aplikace_a_jejich_spu_u0161t_u011Bn_ED"><a href="#Starod_E1vn_E9_aplikace_a_jejich_spu_u0161t_u011Bn_ED" class="headerlink" title="Starodávné aplikace a jejich spuštění"></a>Starodávné aplikace a jejich spuštění</h2><p> Jako firma s dlouhou historií máme mnoho postarších projektů. Postupem let se informace o projektech vytratily. Jejich současné rozjetí na vývoji, testech a produkci je poměrně komplikovanou záležitostí. Pomocí dockeru si můžeme vystavět runtime prostředí pro aplikaci, včetně setavení, aby byla velice snadno spustitelná i pomocí starších nástrojů jako je Java 5 atd.</p>
+<h2 id="S_ED_u0165ov_E1_virtualizace"><a href="#S_ED_u0165ov_E1_virtualizace" class="headerlink" title="Síťová virtualizace"></a>Síťová virtualizace</h2><p> Kontejnery si mezi sebou mohou povídat. A mohou si povídat tak, že nemusí blokovat tcp/udp porty hostitelského systému. Proto si můžeme sestavit “farmičky” dockerových kontejnerů, které si mezi sebou rozumí a nás zajímá pouze jen finální výstup. A to buď cli, nebo např. http tcp port, socket. </p>
+<p> Takových “farmiček” si můžeme spustit na hostitelském systému hned několik. A to právě proto, že neblokují hostitelské systémové prostředky. Síťová virtualizace uvnitř dockeru je podobná síťi postavené mezi plně virtualizovanými systémy. V každé “farmičce” tak můžeme mít MySQL, Elasticsearch, RabbitMQ, Tomcat a další dopňkové mikroslužby. Ale navenek se “farmička” hlásí pouze tak, jak potřebujeme. </p>
+<h2 id="Sd_EDlen_ED_stavu_datab_E1z_ED_mezi_v_FDvojem_a_testem"><a href="#Sd_EDlen_ED_stavu_datab_E1z_ED_mezi_v_FDvojem_a_testem" class="headerlink" title="Sdílení stavu databází mezi vývojem a testem"></a>Sdílení stavu databází mezi vývojem a testem</h2><p> Taky jste určitě zažili sitauci, kdy vás kolega požádal o data. Museli jste provést SQL dump, přenést soubor, kolega si ho musel naimportovat a doufat,že nástroj, kterým provádíte export/import nepoužívá žádné zběsilosti. Data musela být integritní a DDL spolu s DML částmi museli být ve správném pořadí. </p>
+<p> Pokud něco z toho neklaplo, hodiny jste hledali problém.</p>
+<p> S tímto může opět pomoci Docker. Na vývoji je možné provozovat databázi dockerizovanou. Následný commit a push do firemní <code>registry</code> je pak otázka chvilky. Kdokoli pak bude vaše data potřebovat, jednoduše si je s příslušným databázovým nástrojem stáhne z <code>registry</code> a spustí. Tento postup je možné následně aplikovat minimálně mezi vývojáři, testovacím strojem, testery atd…</p>
+<h2 id="Integra_u010Dn_ED_testy_s_Dockerem_-_cesta_tam_a_zase_zp_u011Bt"><a href="#Integra_u010Dn_ED_testy_s_Dockerem_-_cesta_tam_a_zase_zp_u011Bt" class="headerlink" title="Integrační testy s Dockerem - cesta tam a zase zpět"></a>Integrační testy s Dockerem - cesta tam a zase zpět</h2><p> V textu již bylo několikrát nastíněno, že jednou z domén, kde nám Docker může být velice nápomocný, je testování. Ať už testování lokální nebo CI. </p>
+<p> Pokud bychom chtěli otestovat velkou škálu našich aplikací, museli bychom mít nainstalovány na testovacích strojích velké počty verzí MySQL databází, Elasticsearch, RabbitMQ, spoustu našich integračních nástrojů a mnoho dalšího. Pokud bychom provozovali takové množství aplikací, museli bychom vynaložit mnoho prostředků pro jejich údržbu. To ale nikdo z nás nechce.</p>
+<p> I kdybychom měli možnost rozjet více odlišných verzí MySQL a dalších aplikací na jednom stroji, stále bychom museli testovacímu stroji podstrkovat SQL a jiná data potřebná pro integrační otestování. Proto jsme se začali u nás v FG věnovat způsobům, jak využít Docker právě pro CI testování. Docker nám nabízí mnoho různých cestiček, otázkou však je, která pro nás bude nejužitečnější a nejefektivnější.</p>
+<p> Pro průzkum bojem jsme si vybrali projekt, který odpovídá naší standartní aplikaci. Jedná se o Java 8 aplikaci sestavenou mavenem, která využívá databázi MySQL 5.6 a Elasticsearch 1.7.9 (finální setup je složitější, ale pro demostraci postačí).</p>
+<p> Cilem průzkumu bylo spuštění JUnit testů v prostředí Jenkins s tím, že by se integrační testy pouštěli proti dokerizovaným nástrojům MySQL a Elasticsearch. Celé by to mělo pracovat tak hezky, že Jenkins udělá nějakou akci, na základně této akce se spustí kontejnery s MySQL a Elasticsearch, pomocí Mavenu se provedou JUnit testy a celé se to ukončí a stav kontejnerů se smaže. Další iterace, opět od začátku.</p>
+<p> Bylo potřeba nainstalovat Jenkins, Docker, Docker compose a takové ty věci jako Java. To zde nebudu rozepisovat. Berme to tak, že prostředí máme připravené a můžeme nastavovat.</p>
+<h3 id="Cesta_prvn_ED"><a href="#Cesta_prvn_ED" class="headerlink" title="Cesta první"></a>Cesta první</h3><p> V ideální případě bychom chtěli, aby se všechny Docker kontejnery zapnuly ve stejnou chvíli. Po jejich zapnutí by se vypálila nějaká událost. Na základě události by se spustil JUnit test Mavenem a po tom, co by doběhl, by se kontejnery naráz vypnuly a jejich stav smazal.</p>
+<p> Zapnutí všech kontejnerů naráz není vůbec žádný problém. Pro tento případ existuje nástroj <code>docker-compose</code>, kde je pomocí konfiguračního souboru <code>docker-compose.yml</code> možné nastavit celou “farmičku” kontejnerů. Tyto kontejnery pak snadno nahodíme pomocí:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up</span><br></pre></td></tr></table></figure>
+<p> Jednoduché, ale má to první háček. Ono se to spustí, ale na popředí a pak čeká a čeká. Předání řízení Jenkinsu je pak nemožné. Docker compose je možný spustit s přepínačem <code>-d</code> , který už podle písmena napovídá, že se pustí kontejnery jako deamon. Jenže to s Jenkinsem moc nekomunikuje. A tak jediná možnost, jak tento první zádrhel obejít, je klasické *nixové <code>&amp;</code> za příkazem. Tím se nám rozjedou na Jenkinsu kontejnery na pozadí, přesně jak chceme.</p>
+<p> Nyní můžeme spustit testy Mavenem. A zde je druhý zádrhel. Co když se nám nestihnou spustit služby do doby, než se pustí test? Pak testy spadnou a celý postup bude kontraproduktivní. Jednoduchým bruteforce řešením by bylo přidat mezi spuštění kontejnerů a Mavenu shelovské:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sleep 10</span><br></pre></td></tr></table></figure>
+<p> Docker kontejnery a aplikace v nich naštěstí startují poměrně rychle a tak 10s stačilo. </p>
+<p> Po úspěšném dokončení testování Mavenem jsme vypnuli docker kontejnery a jejich stav vymazali:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose kill&#10;docker-compose rm -f</span><br></pre></td></tr></table></figure>
+<p> Testy proběhly, my bychom měli výsledky a vše by bylo na správné cestě. Ale je v tom třetí a možná nejpodstatnější háček. Pokud spouštíme aplikaci v kontejneru tak, aby mohla aplikace spuštěná v systému, nebo Jenkinsu naslouchat na jejím portu, je potřeba port v kontejneru namapovat na port hosta. A v tomto případě máme problém. Pokud bychom chtěli pustit dva testy aplikací, které jsou napojeny na MySQL - localhost:3306. </p>
+<p> Vyskytlo se tolik problémů, že tuto cestu nedoporučujeme využít.</p>
+<h3 id="Cesta_druh_E1"><a href="#Cesta_druh_E1" class="headerlink" title="Cesta druhá"></a>Cesta druhá</h3><p> Po zjištění problémů s mapováním portů jsme se rozhodli, že zkusíme dostat celý proces do Docker kontejnerů a to včetně samotného testování Mavenem. Po zjištění, že už existuje image Mavenu na Docker Hubu, jsme ji vyzkoušeli. Kupodivu testy provedené touto image byly i poměrně rychlé a celkově se nám přístup líbil. Při testech na MacOS se zdálo, že je i tento způsob naprosto dokonalý.</p>
+<p> Vytvořili jsme si konfiguraci Docker compose, dali do ní všechny tři kontejnery: MySQL, Elasticsearch, Maven a spustili akci. Kontejnery se nastartovali, Maven začal testovat a po ukončení testu se všechny kontejnery sami vypnuly.</p>
+<p> Nicméně se stále bavíme o Dockeru. Když jsme tento proces nasadili na Jenkins s Linuxem, tak nastal problém. Po dokončení testu nedošlo k samovolnému ukončení a docker stále měl řízení. Jenkins nemohl ukončit testování bez expolicitního zavolání <code>docker-compose kill</code>.</p>
+<p> Po malém průzkumu jsme zjistili, že se jedná o “fíčuru”, a že se zajisté kontejnery neukončují. K tomu, aby došlo k ukončení kontejnerů po testech se používá mnoho udělátek založených na aktivním čekání v cyklu s uspáním cca na 5s. Stále se musí testovat přes Docker procesy, zda kontejner s Mavenem žije a jakmile se ukončí, tak cyklus zavolá opět <code>docker-compose kill</code>.</p>
+<p> Řešení je to jednoduché, ale myslím že zbytečné. Navíc nám neřeší druhý problém z první cesty. A to, když se služby zapnou dříve. Musí existovat elegantnější cesta.</p>
+<h3 id="Cesta_t_u0159et_ED_a_zat_EDm_fin_E1ln_ED"><a href="#Cesta_t_u0159et_ED_a_zat_EDm_fin_E1ln_ED" class="headerlink" title="Cesta třetí a zatím finální"></a>Cesta třetí a zatím finální</h3><p> Po tom, co jsme několikrát narazili na limity technologie, jsme se rozhodli, jít cestou jinou. </p>
+<p> Začátek je stále stejný. Máme <code>docker-compose.yml</code> s definicí MySQL a Elasticsearch kontejneru:<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql:&#10;  image: mysql:5.6.28&#10;  environment:&#10;    MYSQL_ROOT_PASSWORD: root&#10;    MYSQL_DATABASE: portal_test&#10;    MYSQL_USER: user&#10;    MYSQL_PASSWORD: pass&#10;  hostname: mysql&#10;  container_name: mysql&#10;  command:&#10;    \- --character-set-server=utf8&#10;    \- --collation-server=utf8_czech_ci&#10;elasticsearch:&#10;  image: elasticsearch:1.7.4&#10;  hostname: elasticsearch&#10;  container_name: elasticsearch</span><br></pre></td></tr></table></figure></p>
+<p>  Kontejner startujeme Jenkinsem compose příkazem:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up &#38;</span><br></pre></td></tr></table></figure></p>
+<p>  Jak je vidět, pouštíme ho na pozadí, aby neblokoval další volání jenkins. Teď by stačilo zavolat Maven a mohli bychom spustit testy. Ale oproti prvnímu případu, nemáme v konfiguraci Docker compose, ale mapované porty na hosta. To znamená, že se nemůžeme z hosta na nástroj v Docker kontejneru připojit. A proto je potřeba postit JUNit testy Mavenem také v kontejneru.  </p>
+<p>  Každopádně, jak je vidět, tak oproti předchozímu způsobu nemáme Maven kontejner v compose konfiguraci zmíněn. Tento kontejner budeme spouštět manuálně.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm --name docker --link mysql  --link elasticsearch -v &#34;$PWD&#34;:/usr/src/mymaven -v &#34;$PWD&#34;/docker/:/root/.m2 \ &#10;-h docker -w /usr/src/mymaven maven:3-jdk-8 mvn clean test findbugs:findbugs -f java_web/pom.xml</span><br></pre></td></tr></table></figure>
+<p>  Jak je z příkazu vidět, je zde použito linkování tohoto samostatného kontejneru na kontejnery spuštěné pomocí Docker compose. Tímto způsobem jsme schopni videt na nástroje, které jsme již spustili. </p>
+<p>  Abych to vysvětlil. Docker si vytváří svoji interní síť a registruje do ní kontejnery. Pokud si nevytvoříme svoji síť a explicitně ji do konfigurace nedoplníme, použije se výchozí síť dockeru. Každému kontejneru je přidělena IP a hostname. Hostname s container_name se buď generuje, nebo je možné jej explicitně specifikovat. Jakmile na nově spouštěném kontejneru specifikujeme  propojení jiného kontejneru linkováním, zanese si informaci o IP a hostname linkovaného kontejneru do /etc/hosts.</p>
+<p>  Ve zkratce jsem schopen říct, že jsme eliminivali samostatným spuštěním kontejneru s Mavenem hned dva problémy. První eliminovaný probém je již zmíněné mapování portů na hostovi. Veškerá tcp/udp konverzace probíhá uvnitř virtuální Docker sítě, a proto není potřeba publikovat žádný port ven z Docker infrastruktury. Druhým eliminovaným problémem je nepředávání řízení Jenkinsu po ukončení testování. Jakmile Maven v kontejneru skončí, kontejner se sám vypne a předá řízení opět Jenkinsu.</p>
+<p>  Následuje již zmíněné:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose kill&#10;docker-compose rm -f</span><br></pre></td></tr></table></figure></p>
+<p>  Stále ale ve vzduchu visí jeden problém. Co když se nestihnou spustit kontejnery z Docker compose dříve, než se budeme snažit nastartovat kontejner s Mavenem. V negativním scénáři, kdy se opravdu nepodaří spustit kontejnery, spuštění Maven kontejneru skončí s chybovým hlášením, že neexistují linkované kontejnery. Problém lze eliminivat tak, že po spuštění compose chvilku vyčkáme:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up &#38;&#10;sleep 5</span><br></pre></td></tr></table></figure>
+<p> Stačí opravdu krátká doba. Zde nečekáme na to, až se nástroje uvnitř kontejneru spustí. Zde se čeká jen na start samostatného kontejneru. Do Docker sítě se zaregistruje až spuštěný kontejner a ten je pak následně linkovatelný.</p>
+<p> Ale někdy potřebujeme vyčkat se spuštěním testů do doby, než se spustí i nástroje uvnitř kontejneru. Například nemůžeme pustit testy pracující s databází, pokud neběží MySQL. Zjisit, zda služba jede, je možné teoreticky v tuto chvíli jen z aktivního čekání v uspávaném cyklu. V cyklu je testována dostupnost tcp portu. Testuje se, zda port přijme spojení či ne. Celkově se cyklus chová jako bariéra. Dokud nejsou všechny podmínky na dostupnost splněny, tak se čeká. Po splnění obyvkle proces skončí, aby mohl pokračovat proces jiný. Aby byli naše podmínky splněné, musí tento čekací algoritmus běžet uvnitř dalšího Docker kontejneru, aby měl dostupné linkované kontejnery spuštěné z compose.</p>
+<p> Přesně toto jsme chtěli v našem testovacím procesu použít. Psát ale vlastní řešení nebo vymýšlet kolo, nebylo to pravé ořechové. Nakonec jsme narazili na aplikaci <a href="https://github.com/jwilder/dockerize" target="_blank" rel="external">Dockerize</a>, která splňovala přesně naše očekávání. Tato jednoduchá aplikace po splnění podmínek spustí jiný proces a skončí nebo pouze skončí.</p>
+<p> Tuto aplikaci bylo potřeba spustit pro naše potřeby v kontejneru. Proto jsme si vytvořili vlastní <a href="https://github.com/lcir/dockerize-image" target="_blank" rel="external">image</a> s aplikací <code>dockerize</code>. </p>
+<p> Vybuildovat tuto image je velmi jednoduché:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker buid -t lcir/dockerize .</span><br></pre></td></tr></table></figure></p>
+<p> Po sestavení image je možné ji použít ve vlastním testovacím procesu Jenkinse:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm --name dockerize --link mysql --link elasticsearch \&#10; lcir/dockerize dockerize -timeout 200s -wait tcp://mysql:3306 -wait http://elasticsearch:9200</span><br></pre></td></tr></table></figure>
+<p> Spouštíme <code>dockerize</code> v samostatném kontejneru s nalinkvanými kontejnery MySQL a Elasticsearch. Dockerize má čekat 200s, zda se něco stane. Pokud ne, <code>dockerize</code> se ukončí. Každopádně čekáme na tcp port 3306 na kontejner mysql a na port 9200 u kontejneru elasticsearch.</p>
+<p> Jakmile jsou podmínky splněny, bariéra pustí zpracování dál. Nyní konkrétně už na JUnit Maven testování.</p>
+<p> Pro úplnost je zde zmíněn celý build postup:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker buid -t lcir/dockerize .&#10; &#10;docker-compose up &#38;&#10;sleep 5&#10;docker run --rm --name dockerize --link mysql --link elasticsearch \ &#10;lcir/dockerize dockerize -timeout 200s -wait tcp://mysql:3306 -wait http://elasticsearch:9200&#10;&#10;docker run --rm --name docker --link mysql  --link elasticsearch -v &#34;$PWD&#34;:/usr/src/mymaven -v &#34;$PWD&#34;/docker/:/root/.m2 \ &#10;-h docker -w /usr/src/mymaven maven:3-jdk-8 mvn clean test findbugs:findbugs -f java_web/pom.xml&#10;&#10;docker-compose kill&#10;docker-compose rm -f</span><br></pre></td></tr></table></figure>
+<h2 id="Z_E1v_u011Brem"><a href="#Z_E1v_u011Brem" class="headerlink" title="Závěrem"></a>Závěrem</h2><p>  Myslím si, že až se vyladí pár problematických konstrukcí v Dockeru, zlepší se podpora pro Microsoft a Apple, bude Docker hrát velice důležitou roli v další historii IT. Uvidíme, kam až tento nadějný nástroj jeho tvůrci dostanou.</p>
+<p>  My se budeme nadále snažit pomocí Dockeru zvýšit efektivitu naší práce. Postupně budeme do našich pracovních postupů stále více Docker integrovat. Možností využití zde bylo popsáno několik. Určitě v budoucnu napíši jak se nám to daří.</p>
+<p>  Lukáš Cír<br>  FG Forrest, s.r.o.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.ptw.cz/2016/02/01/Dockerization/" data-id="cik8qw2zl00001xfl655otm4t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
+      <article id="post-Prvni-Post" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/28/Prvni-Post/">První příspěvek</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/01/28/Prvni-Post/">
+      <time datetime="2016-01-28T20:47:04.000Z" itemprop="datePublished">2016-01-28</time>
+    </a>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>Tak a je to tu, založil jsem si blog. Důvodem založení, je nutnost ventilovat své myšlenky ohledně devs, testovám, hrátek s Dockerem a plánovaní akciček. Dalším námětem budou reporty a zápisky z přednášek.</p>
+<p>Tak snad neskončím tímto prvním příspěvkem :-)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.ptw.cz/2016/01/28/Prvni-Post/" data-id="cik8qw30200011xfl3k8o2tf4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    </section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/01/Dockerization/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/02/01/Dockerization/" class="title">Dokerizace v FG Forrest</a></p>
+              <p class="item-date"><time datetime="2016-02-01T22:33:41.000Z" itemprop="datePublished">2016-02-01</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/01/28/Prvni-Post/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/01/28/Prvni-Post/" class="title">První příspěvek</a></p>
+              <p class="item-date"><time datetime="2016-01-28T20:47:04.000Z" itemprop="datePublished">2016-01-28</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Lukáš Cír<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
