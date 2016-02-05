@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Dokerizace v FG Forrest | Pozdní odpoledne</title>
+    <title>Dokerizace Maven testů v CI Jenkins | Pozdní odpoledne</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
     <meta name="description" content="Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dokerizace v FG Forrest">
+<meta property="og:title" content="Dokerizace Maven testů v CI Jenkins">
 <meta property="og:url" content="http://blog.ptw.cz/2016/02/01/Dockerization/index.html">
 <meta property="og:site_name" content="Pozdní odpoledne">
 <meta property="og:description" content="Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno">
 <meta property="og:image" content="http://blog.ptw.cz/css/images/hqdefault.jpg">
-<meta property="og:updated_time" content="2016-02-05T12:19:00.000Z">
+<meta property="og:updated_time" content="2016-02-05T12:40:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dokerizace v FG Forrest">
+<meta name="twitter:title" content="Dokerizace Maven testů v CI Jenkins">
 <meta name="twitter:description" content="Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno">
 
     
@@ -113,7 +113,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        Dokerizace v FG Forrest
+        Dokerizace Maven testů v CI Jenkins
         </h1>
     
 
@@ -126,7 +126,7 @@ ga('send', 'pageview');
         </p>
         <div class="article-entry" itemprop="articleBody">
             <p><img src="/css/images/hqdefault.jpg" alt=""></p>
-<p>Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno jsme se rozhodli i my v FG Forrest, že tuto technologii vyzkoušíme a zařadíme do běžného workflow našich aplikací.</p>
+<p>Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno jsme se rozhodli i my v naší firmě, že tuto technologii vyzkoušíme a zařadíme do běžného workflow našich aplikací.</p>
 <p>Předpokládám, že všichni víte, co je to Docker. Pokud ne, doporučuji si poslechnout přednášku <a href="https://www.youtube.com/watch?v=UIqpyHoIHuo" target="_blank" rel="external">Martina Damovského</a> a <a href="https://www.youtube.com/watch?v=yluC15kbbv4" target="_blank" rel="external">Radima Dana Pánka</a>, jejichž vystoupeni byla naše firma partnerem. </p>
 <h2 id="Co_od_toho_o_u010Dek_E1v_E1me_3F"><a href="#Co_od_toho_o_u010Dek_E1v_E1me_3F" class="headerlink" title="Co od toho očekáváme?"></a>Co od toho očekáváme?</h2><p>To je jednoduchá otázka s jednoduchou odpovědí - zjednodušení práce.  </p>
 <h3 id="Co_n_E1m_m_u016F_u017Ee_Docker_p_u0159in_E9st_3F"><a href="#Co_n_E1m_m_u016F_u017Ee_Docker_p_u0159in_E9st_3F" class="headerlink" title="Co nám může Docker přinést?"></a>Co nám může Docker přinést?</h3><ul>
@@ -136,7 +136,7 @@ ga('send', 'pageview');
 <li>Usnadnění deploymentu</li>
 <li>Rychlejší spuštění archaických aplikací</li>
 <li><p>Sdílení stavů aplikací a databází mezi vývojem a testem</p>
-<h2 id="Sjednocen_ED_verz_ED"><a href="#Sjednocen_ED_verz_ED" class="headerlink" title="Sjednocení verzí"></a>Sjednocení verzí</h2><p>Vzhledem k tomu, že firma FG Forrest je už nějakou chvilku na trhu, disponuje velkou škálou klientských aplikací. Některé aplikace běží například na Java 5 nebo starších verzí MySQL 5. Tyto nástroje jsou v dnešní době už těžko sehnatelné a velmi komplikovaně spustitelné na platformách jako je Mac OSX a jiné.</p>
+<h2 id="Sjednocen_ED_verz_ED"><a href="#Sjednocen_ED_verz_ED" class="headerlink" title="Sjednocení verzí"></a>Sjednocení verzí</h2><p>Vzhledem k tomu, že je naše firma už nějakou chvilku na trhu, disponuje velkou škálou klientských aplikací. Některé aplikace běží například na Java 5 nebo starších verzí MySQL 5. Tyto nástroje jsou v dnešní době už těžko sehnatelné a velmi komplikovaně spustitelné na platformách jako je Mac OSX a jiné.</p>
 </li>
 </ul>
 <p> Pokud na takových aplikacích probíhal i nyní nový vývoj, musel vývojář používat verzi nástroje jinou, než na které pojede aplikace na produkci. Tento stav je nežádoucí, jelikož nástroje se mouhou verze od verze lišit. Například tomu tak je u MySQL 5. Zde Oracle pod odkoupení Sun Microsystems upravil SQL definice.</p>
@@ -152,7 +152,7 @@ ga('send', 'pageview');
 <p> S tímto může opět pomoci Docker. Na vývoji je možné provozovat databázi dockerizovanou. Následný commit a push do firemní <code>registry</code> je pak otázka chvilky. Kdokoli pak bude vaše data potřebovat, jednoduše si je s příslušným databázovým nástrojem stáhne z <code>registry</code> a spustí. Tento postup je možné následně aplikovat minimálně mezi vývojáři, testovacím strojem, testery atd…</p>
 <h2 id="Integra_u010Dn_ED_testy_s_Dockerem_-_cesta_tam_a_zase_zp_u011Bt"><a href="#Integra_u010Dn_ED_testy_s_Dockerem_-_cesta_tam_a_zase_zp_u011Bt" class="headerlink" title="Integrační testy s Dockerem - cesta tam a zase zpět"></a>Integrační testy s Dockerem - cesta tam a zase zpět</h2><p> V textu již bylo několikrát nastíněno, že jednou z domén, kde nám Docker může být velice nápomocný, je testování. Ať už testování lokální nebo CI. </p>
 <p> Pokud bychom chtěli otestovat velkou škálu našich aplikací, museli bychom mít nainstalovány na testovacích strojích velké počty verzí MySQL databází, Elasticsearch, RabbitMQ, spoustu našich integračních nástrojů a mnoho dalšího. Pokud bychom provozovali takové množství aplikací, museli bychom vynaložit mnoho prostředků pro jejich údržbu. To ale nikdo z nás nechce.</p>
-<p> I kdybychom měli možnost rozjet více odlišných verzí MySQL a dalších aplikací na jednom stroji, stále bychom museli testovacímu stroji podstrkovat SQL a jiná data potřebná pro integrační otestování. Proto jsme se začali u nás v FG věnovat způsobům, jak využít Docker právě pro CI testování. Docker nám nabízí mnoho různých cestiček, otázkou však je, která pro nás bude nejužitečnější a nejefektivnější.</p>
+<p> I kdybychom měli možnost rozjet více odlišných verzí MySQL a dalších aplikací na jednom stroji, stále bychom museli testovacímu stroji podstrkovat SQL a jiná data potřebná pro integrační otestování. Proto jsme se začali u nás ve firmě věnovat způsobům, jak využít Docker právě pro CI testování. Docker nám nabízí mnoho různých cestiček, otázkou však je, která pro nás bude nejužitečnější a nejefektivnější.</p>
 <p> Pro průzkum bojem jsme si vybrali projekt, který odpovídá naší standartní aplikaci. Jedná se o Java 8 aplikaci sestavenou mavenem, která využívá databázi MySQL 5.6 a Elasticsearch 1.7.9 (finální setup je složitější, ale pro demostraci postačí).</p>
 <p> Cilem průzkumu bylo spuštění JUnit testů v prostředí Jenkins s tím, že by se integrační testy pouštěli proti dokerizovaným nástrojům MySQL a Elasticsearch. Celé by to mělo pracovat tak hezky, že Jenkins udělá nějakou akci, na základně této akce se spustí kontejnery s MySQL a Elasticsearch, pomocí Mavenu se provedou JUnit testy a celé se to ukončí a stav kontejnerů se smaže. Další iterace, opět od začátku.</p>
 <p> Bylo potřeba nainstalovat Jenkins, Docker, Docker compose a takové ty věci jako Java. To zde nebudu rozepisovat. Berme to tak, že prostředí máme připravené a můžeme nastavovat.</p>
@@ -205,7 +205,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://blog.ptw.cz/2016/02/01/Dockerization/" data-id="cik9nubwz0000zafl42izi87h" class="article-share-link"><i class="fa fa-share"></i>Sdílet</a>
+    <a data-url="http://blog.ptw.cz/2016/02/01/Dockerization/" data-id="cik9ok79o00006qflu49slaqh" class="article-share-link"><i class="fa fa-share"></i>Sdílet</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -356,14 +356,14 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                             <a href="/2016/02/01/Dockerization/" class="thumbnail">
     
     
-        <span style="background-image:url(/css/images/hqdefault.jpg)" alt="Dokerizace v FG Forrest" class="thumbnail-image"></span>
+        <span style="background-image:url(/css/images/hqdefault.jpg)" alt="Dokerizace Maven testů v CI Jenkins" class="thumbnail-image"></span>
     
 </a>
                         </div>
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/02/01/Dockerization/" class="title">Dokerizace v FG Forrest</a></p>
+                            <p class="item-title"><a href="/2016/02/01/Dockerization/" class="title">Dokerizace Maven testů v CI Jenkins</a></p>
                             <p class="item-date"><time datetime="2016-02-01T22:33:41.000Z" itemprop="datePublished">2016-02-01</time></p>
                         </div>
                     </li>
