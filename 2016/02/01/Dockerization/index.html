@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Pozdní odpoledne">
 <meta property="og:description" content="Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno">
 <meta property="og:image" content="http://blog.ptw.cz/css/images/hqdefault.jpg">
-<meta property="og:updated_time" content="2016-02-05T08:26:28.000Z">
+<meta property="og:updated_time" content="2016-02-05T12:19:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dokerizace v FG Forrest">
 <meta name="twitter:description" content="Už to bude pár let, co se mezi námi objevil pojem Docker a následná dokerizace všeho živého a neživého v IT. Technologie Dockeru se už pomalu začíná usazovat a koketuje s ní stále více firem. Nedávno">
@@ -197,7 +197,7 @@ ga('send', 'pageview');
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker buid -t lcir/dockerize .&#10; &#10;docker-compose up &#38;&#10;sleep 5&#10;docker run --rm --name dockerize --link mysql --link elasticsearch \ &#10;lcir/dockerize dockerize -timeout 200s -wait tcp://mysql:3306 -wait http://elasticsearch:9200&#10;&#10;docker run --rm --name docker --link mysql  --link elasticsearch -v &#34;$PWD&#34;:/usr/src/mymaven -v &#34;$PWD&#34;/docker/:/root/.m2 \ &#10;-h docker -w /usr/src/mymaven maven:3-jdk-8 mvn clean test findbugs:findbugs -f java_web/pom.xml&#10;&#10;docker-compose kill&#10;docker-compose rm -f</span><br></pre></td></tr></table></figure>
 <h2 id="Z_E1v_u011Brem"><a href="#Z_E1v_u011Brem" class="headerlink" title="Závěrem"></a>Závěrem</h2><p>  Myslím si, že až se vyladí pár problematických konstrukcí v Dockeru, zlepší se podpora pro Microsoft a Apple, bude Docker hrát velice důležitou roli v další historii IT. Uvidíme, kam až tento nadějný nástroj jeho tvůrci dostanou.</p>
 <p>  My se budeme nadále snažit pomocí Dockeru zvýšit efektivitu naší práce. Postupně budeme do našich pracovních postupů stále více Docker integrovat. Možností využití zde bylo popsáno několik. Určitě v budoucnu napíši jak se nám to daří.</p>
-<p>  Lukáš Cír<br>  FG Forrest, s.r.o.</p>
+<p>  Lukáš Cír<br>  FG Forrest, a.s.</p>
 
         </div>
         <footer class="article-footer">
@@ -205,7 +205,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://blog.ptw.cz/2016/02/01/Dockerization/" data-id="cik9fnndt0000vrfl01ykf7i3" class="article-share-link"><i class="fa fa-share"></i>Sdílet</a>
+    <a data-url="http://blog.ptw.cz/2016/02/01/Dockerization/" data-id="cik9nubwz0000zafl42izi87h" class="article-share-link"><i class="fa fa-share"></i>Sdílet</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
