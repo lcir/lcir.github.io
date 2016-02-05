@@ -256,14 +256,14 @@ body {
 .logo {
   display: block;
   padding: 10px 0;
-  width: 165px;
-  height: 60px;
-  background-image: url("images/odpoledne2.png");
+  width: 300px;
+  height: 90px;
+  background-image: url("images/odpoledne.png");
   background-position: 0px 10px;
   background-repeat: no-repeat;
-  -webkit-background-size: 165px 60px;
-  -moz-background-size: 165px 60px;
-  background-size: 165px 60px;
+  -webkit-background-size: 300px 90px;
+  -moz-background-size: 300px 90px;
+  background-size: 300px 90px;
 }
 .main-body {
   margin-top: -60px;
@@ -360,7 +360,7 @@ body {
 #header-title .subtitle {
   font-size: 16px;
   font-style: italic;
-  line-height: 70px;
+  line-height: 100px;
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
 }
@@ -1515,11 +1515,11 @@ a.article-title:hover {
   line-height: 22px;
 }
 #footer .logo {
-  width: 132px;
-  height: 48px;
-  -webkit-background-size: 132px 48px;
-  -moz-background-size: 132px 48px;
-  background-size: 132px 48px;
+  width: 240px;
+  height: 72px;
+  -webkit-background-size: 240px 72px;
+  -moz-background-size: 240px 72px;
+  background-size: 240px 72px;
 }
 i.icon {
   display: inline-block;
