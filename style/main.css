@@ -1,0 +1,45 @@
+.b {
+}
+
+#body-text {
+	font-family: 'Lobster', cursive; 
+	font-size: 40px;
+	text-align: center;
+	padding: 40px;
+}
+
+#body-text2 {
+	font-family: 'VT323', monospace; 
+	font-size: 30px;
+	margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.underline-tip {
+	font-size: 14px;
+	padding: 0px;
+	margin: 0px;
+}
+
+header {
+		font-family: 'Barrio', cursive;
+     position:fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+	 background-color: #000000;
+  color: #ffffff;
+ }
+
+footer {
+ font-family: 'Lobster', cursive; 
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #000000;
+  text-align: center;
+  color: #ffffff;
+}
