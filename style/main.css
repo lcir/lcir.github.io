@@ -1,27 +1,3 @@
-.background-image {
-    background-image: url('https://lh3.googleusercontent.com/j0j321juegmiuqNquRb4-x4_Ym_wIHYFEpwk5xE4_1ZKUiAFeaNPU4Zy9b2AHPKvNqiL4VIoPVID6OCUzzWz72lJkRDWRFsOBGzvYqN9xoFNWDpTJLxnA6GaX9HmVQWnwCti9_X_DA6bT_d1Jw9EkWNxeG2aTvjQ37JTHwXEfT_4_lkx_hxCi9Abh9-_id461Aqo4Ty5TVUBepXPgTOiNPHoYPKfIZ6Q-Gu-FfOrcT6Tc5Iar9hsXYyVXjRuMu18rlmGnszSq0LTkySPHzgyjkxM4QdKIHM4i2ZMVNrnN_HEkL1W3YuUOOZUtb9iR4q5ftul7gWhymWpVhNQgQZjpcZOuXG8ybctxwMVLAMpw5UCURAuWM9BDzXA5SxrDwWHV9kongClIkOwG2EHYfHIjjTjNQ4Cb2Y7pjiTYPk2Wr2B-JMQAjUM9Qi8bCnBzT8qJcuSdNXIVqTapH4vBy-SoNa_-5cgfuD3zfvpvnGqWV-cV9oLt4vmJ3fbz9mjTKHYMYXOiRvLFuRvY1MFEO6yxPmy0_dnM8ZEH_Ae06x4O1OR3LbjUKYd0juOOUHsC7YwI2I113Dt_FuTIBuodieMJbHr5ssEXZ5R07f1A0LBzWKs8drZ-11Ylw=w2604-h1464-no');
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    opacity: 0.2;
-    display: block;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-    filter: blur(10px);
-}
-
-#others {
-    overflow: auto;
-    position: relative;
-}
-
 #body-text {
     font-family: 'Lobster', cursive;
     font-size: 40px;
