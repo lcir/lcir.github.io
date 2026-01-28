@@ -34,7 +34,6 @@ export function LandingPage({ data }: LandingPageProps) {
           <div className="avatar">
             <img src="/profile.png" alt={cv.name} />
             <div className="avatar-ring" />
-            <div className="avatar-flag">{lang === "cz" ? "CZ" : "EN"}</div>
           </div>
           <div className="top-skills">
             {cv.topSkills.map((skill) => (

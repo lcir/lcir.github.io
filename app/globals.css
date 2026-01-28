@@ -193,18 +193,6 @@ h1 {
   mix-blend-mode: multiply;
 }
 
-.avatar-flag {
-  position: absolute;
-  right: -14px;
-  top: 20px;
-  background: var(--black);
-  color: var(--accent);
-  padding: 0.4rem 0.6rem;
-  font-family: var(--font-mono), "JetBrains Mono", monospace;
-  font-size: 0.85rem;
-  transform: rotate(8deg);
-}
-
 .top-skills {
   display: flex;
   gap: 0.6rem;
