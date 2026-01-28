@@ -188,7 +188,7 @@ h1 {
 
 .avatar-ring {
   position: absolute;
-  inset: 28px;
+  inset: 8px;
   border: 2px dashed var(--black);
   mix-blend-mode: multiply;
 }
