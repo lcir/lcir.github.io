@@ -25,6 +25,9 @@ export function CvPage({ data }: CvPageProps) {
       <header className="cv-hero">
         <div>
           <p className="cv-kicker">{lang === "cz" ? "CV" : "Resume"}</p>
+          <div className="cv-photo">
+            <img src="/profile.png" alt={cv.name} />
+          </div>
           <h1>{cv.name}</h1>
           <p className="role">{cv.role}</p>
           <p className="tagline">{cv.tagline}</p>

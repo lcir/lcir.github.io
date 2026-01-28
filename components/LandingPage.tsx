@@ -32,7 +32,7 @@ export function LandingPage({ data }: LandingPageProps) {
         </div>
         <div className="landing-art">
           <div className="avatar">
-            <div className="avatar-inner" />
+            <img src="/profile.png" alt={cv.name} />
             <div className="avatar-ring" />
             <div className="avatar-flag">{lang === "cz" ? "CZ" : "EN"}</div>
           </div>
