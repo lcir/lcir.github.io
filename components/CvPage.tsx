@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import type { CvData, CvDataMap, ExperienceItem } from "../lib/types";
 import { useLanguage } from "./LanguageProvider";
-import { LanguageToggle } from "./LanguageToggle";
 import { Modal } from "./Modal";
+import { SiteNav } from "./SiteNav";
 
 interface CvPageProps {
   data: CvDataMap;
@@ -21,7 +21,7 @@ export function CvPage({ data }: CvPageProps) {
 
   return (
     <div className="page cv-page">
-      <LanguageToggle />
+      <SiteNav />
       <header className="cv-hero">
         <div>
           <p className="cv-kicker">{lang === "cz" ? "CV" : "Resume"}</p>
