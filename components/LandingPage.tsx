@@ -50,6 +50,11 @@ export function LandingPage({ data }: LandingPageProps) {
             <img src="/profile.png" alt={cv.name} />
             <div className="avatar-ring" />
           </div>
+          <img
+            className="wip-sticker"
+            src="/wip-sticker.png"
+            alt={lang === "cz" ? "Work in progress" : "Work in progress"}
+          />
           <div className="signal-panel">
             <p>{lang === "cz" ? "Pracuju na pomezí" : "Working across"}</p>
             <div className="top-skills">
