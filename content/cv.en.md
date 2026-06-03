@@ -1,6 +1,6 @@
 ---
 name: "Lukas Cir"
-role: "Engineering Manager"
+role: "Senior Staff Engineer / Engineering Manager"
 tagline: "I build resilient data platforms and lead teams that keep them moving."
 location: "Hradec Kralove, Czech Republic"
 contact:
@@ -24,13 +24,21 @@ skills:
   - "SQL (MSSQL, Oracle)"
   - "Node.js / TypeScript"
 experience:
+  - id: "exp-ataccama-senior-staff-manager"
+    company: "Ataccama"
+    title: "Senior Staff Engineer / Engineering Manager"
+    start: "2026-04"
+    end: "present"
+    location: "Hradec Kralove, CZ"
+    summary: "Hybrid role combining technical leadership, platform architecture, and team leadership."
+    stack: ["Java", "Kotlin", "Kafka", "Cloud"]
   - id: "exp-ataccama-manager"
     company: "Ataccama"
     title: "Engineering Manager"
     start: "2023-03"
-    end: "present"
+    end: "2026-03"
     location: "Hradec Kralove, CZ"
-    summary: "Leading a team in data management, delivery, and technical quality."
+    summary: "Led a team in data management, delivery, and technical quality."
     stack: ["Java", "Kotlin", "Kafka", "Cloud"]
   - id: "exp-ataccama-java"
     company: "Ataccama"
@@ -127,6 +135,9 @@ education:
     start: "2004"
     end: "2010"
 ---
+
+## exp-ataccama-senior-staff-manager
+Hybrid Senior Staff Engineer and Engineering Manager role. Technical leadership for platform decisions, architecture support, delivery quality, mentoring of senior engineers, and cross-functional collaboration with product and engineering teams.
 
 ## exp-ataccama-manager
 Leadership focused on delivery quality, platform stability, and team growth. Cross‑functional collaboration with product and engineering.

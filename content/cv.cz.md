@@ -1,6 +1,6 @@
 ---
 name: "Lukáš Cír"
-role: "Engineering Manager"
+role: "Senior Staff Engineer / Engineering Manager"
 tagline: "Stavím robustní datové platformy a vedu týmy, které je umí udržet v pohybu."
 location: "Hradec Králové, Česká republika"
 contact:
@@ -24,13 +24,21 @@ skills:
   - "SQL (MSSQL, Oracle)"
   - "Node.js / TypeScript"
 experience:
+  - id: "exp-ataccama-senior-staff-manager"
+    company: "Ataccama"
+    title: "Senior Staff Engineer / Engineering Manager"
+    start: "2026-04"
+    end: "současnost"
+    location: "Hradec Králové, CZ"
+    summary: "Hybridní role kombinující technický leadership, architekturu platformy a vedení týmu."
+    stack: ["Java", "Kotlin", "Kafka", "Cloud"]
   - id: "exp-ataccama-manager"
     company: "Ataccama"
     title: "Engineering Manager"
     start: "2023-03"
-    end: "současnost"
+    end: "2026-03"
     location: "Hradec Králové, CZ"
-    summary: "Vedu tým v oblasti data managementu, doručování funkcí i technické kvality."
+    summary: "Vedení týmu v oblasti data managementu, doručování funkcí a technické kvality."
     stack: ["Java", "Kotlin", "Kafka", "Cloud"]
   - id: "exp-ataccama-java"
     company: "Ataccama"
@@ -127,6 +135,9 @@ education:
     start: "2004"
     end: "2010"
 ---
+
+## exp-ataccama-senior-staff-manager
+Role na pomezí Senior Staff Engineera a Engineering Managera. Technické vedení platformních rozhodnutí, podpora architektury a kvality doručení, mentoring seniorních inženýrů a spolupráce napříč produktovými i technickými týmy.
 
 ## exp-ataccama-manager
 Vedoucí role se zaměřením na kvalitu doručení, stabilitu platformy a rozvoj lidí. Spolupráce napříč produktovými a technickými týmy.
