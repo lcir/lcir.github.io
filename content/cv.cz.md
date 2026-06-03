@@ -30,16 +30,16 @@ experience:
     start: "2026-04"
     end: "současnost"
     location: "Hradec Králové, CZ"
-    summary: "Hybridní role kombinující technický leadership, architekturu platformy a vedení týmu."
-    stack: ["Java", "Kotlin", "Kafka", "Cloud"]
+    summary: "Hybridní role kombinující technický leadership, Data Quality doménu a vedení týmu."
+    stack: ["Java", "Kotlin", "Kubernetes", "Cloud"]
   - id: "exp-ataccama-manager"
     company: "Ataccama"
     title: "Engineering Manager"
     start: "2023-03"
     end: "2026-03"
     location: "Hradec Králové, CZ"
-    summary: "Vedení týmu v oblasti data managementu, doručování funkcí a technické kvality."
-    stack: ["Java", "Kotlin", "Kafka", "Cloud"]
+    summary: "Vedení týmu v Data Quality doméně, doručování funkcí a technické kvalitě."
+    stack: ["Java", "Kotlin", "Kubernetes", "Cloud"]
   - id: "exp-ataccama-java"
     company: "Ataccama"
     title: "Java Software Engineer"
@@ -47,7 +47,7 @@ experience:
     end: "2023-02"
     location: "Česko"
     summary: "Vývoj a údržba backendových služeb pro data platformu."
-    stack: ["Java", "Spring Boot", "Kafka"]
+    stack: ["Java", "Spring Boot", "Kubernetes"]
   - id: "exp-jablotron-cloud"
     company: "JABLOTRON CLOUD Services s.r.o."
     title: "Software architect (Java)"
@@ -137,10 +137,10 @@ education:
 ---
 
 ## exp-ataccama-senior-staff-manager
-Role na pomezí Senior Staff Engineera a Engineering Managera. Technické vedení platformních rozhodnutí, podpora architektury a kvality doručení, mentoring seniorních inženýrů a spolupráce napříč produktovými i technickými týmy.
+Role na pomezí Senior Staff Engineera a Engineering Managera. Vedení týmu zodpovědného za Data Quality doménu, technické vedení platformních rozhodnutí, podpora architektury a kvality doručení, mentoring seniorních inženýrů a spolupráce napříč produktovými i technickými týmy.
 
 ## exp-ataccama-manager
-Vedoucí role se zaměřením na kvalitu doručení, stabilitu platformy a rozvoj lidí. Spolupráce napříč produktovými a technickými týmy.
+Vedoucí role v Data Quality doméně se zaměřením na kvalitu doručení, stabilitu platformy a rozvoj lidí. Spolupráce napříč produktovými a technickými týmy.
 
 ## exp-ataccama-java
 Vývoj backendových služeb a integrací v rámci data management platformy. Důraz na výkon a spolehlivost.

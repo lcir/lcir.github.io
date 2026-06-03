@@ -30,16 +30,16 @@ experience:
     start: "2026-04"
     end: "present"
     location: "Hradec Kralove, CZ"
-    summary: "Hybrid role combining technical leadership, platform architecture, and team leadership."
-    stack: ["Java", "Kotlin", "Kafka", "Cloud"]
+    summary: "Hybrid role combining technical leadership, the Data Quality domain, and team leadership."
+    stack: ["Java", "Kotlin", "Kubernetes", "Cloud"]
   - id: "exp-ataccama-manager"
     company: "Ataccama"
     title: "Engineering Manager"
     start: "2023-03"
     end: "2026-03"
     location: "Hradec Kralove, CZ"
-    summary: "Led a team in data management, delivery, and technical quality."
-    stack: ["Java", "Kotlin", "Kafka", "Cloud"]
+    summary: "Led a team in the Data Quality domain, delivery, and technical quality."
+    stack: ["Java", "Kotlin", "Kubernetes", "Cloud"]
   - id: "exp-ataccama-java"
     company: "Ataccama"
     title: "Java Software Engineer"
@@ -47,7 +47,7 @@ experience:
     end: "2023-02"
     location: "Czech Republic"
     summary: "Backend services development and maintenance for data platform."
-    stack: ["Java", "Spring Boot", "Kafka"]
+    stack: ["Java", "Spring Boot", "Kubernetes"]
   - id: "exp-jablotron-cloud"
     company: "JABLOTRON CLOUD Services s.r.o."
     title: "Software Architect (Java)"
@@ -137,10 +137,10 @@ education:
 ---
 
 ## exp-ataccama-senior-staff-manager
-Hybrid Senior Staff Engineer and Engineering Manager role. Technical leadership for platform decisions, architecture support, delivery quality, mentoring of senior engineers, and cross-functional collaboration with product and engineering teams.
+Hybrid Senior Staff Engineer and Engineering Manager role. Leading the team responsible for the Data Quality domain, technical leadership for platform decisions, architecture support, delivery quality, mentoring of senior engineers, and cross-functional collaboration with product and engineering teams.
 
 ## exp-ataccama-manager
-Leadership focused on delivery quality, platform stability, and team growth. Cross‑functional collaboration with product and engineering.
+Leadership in the Data Quality domain focused on delivery quality, platform stability, and team growth. Cross‑functional collaboration with product and engineering.
 
 ## exp-ataccama-java
 Backend service development and integrations for the data management platform. Emphasis on performance and reliability.
