@@ -164,10 +164,27 @@ h1 {
   letter-spacing: 0;
 }
 
+.cv-hero .role {
+  display: block;
+  width: fit-content;
+  max-width: 46rem;
+  margin: 1rem 0 1.15rem;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: var(--black);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.55);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
 .tagline {
   font-size: 1.1rem;
   max-width: 32rem;
   color: #e5e1da;
+  overflow-wrap: anywhere;
 }
 
 .route-cards {
@@ -307,6 +324,15 @@ h1 {
   animation: fadeSlide 0.8s ease both;
 }
 
+.cv-hero > *,
+.cv-section,
+.contact-box,
+.chip-list,
+.experience-card,
+.card-header > * {
+  min-width: 0;
+}
+
 .cv-kicker {
   font-family: var(--font-mono), "JetBrains Mono", monospace;
   text-transform: uppercase;
@@ -356,6 +382,13 @@ h1 {
   text-transform: uppercase;
 }
 
+.contact-box a,
+.contact-box p {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 .cv-section {
   display: flex;
   flex-direction: column;
@@ -376,10 +409,12 @@ h1 {
 }
 
 .chip {
+  max-width: 100%;
   padding: 0.4rem 0.7rem;
   border: 2px solid var(--white);
   text-transform: uppercase;
   font-size: 0.85rem;
+  overflow-wrap: anywhere;
 }
 
 .chip.muted {
@@ -415,6 +450,23 @@ h1 {
   flex-wrap: wrap;
 }
 
+.experience-card h3 {
+  max-width: 46rem;
+  color: var(--white);
+  font-size: 1.45rem;
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+
+.experience-card:first-child {
+  border-color: var(--accent);
+  background: rgba(242, 201, 76, 0.08);
+}
+
+.experience-card:first-child h3 {
+  color: var(--accent);
+}
+
 .company {
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -435,8 +487,10 @@ h1 {
 }
 
 .stack span {
+  max-width: 100%;
   border: 1px dashed var(--accent);
   padding: 0.2rem 0.5rem;
+  overflow-wrap: anywhere;
 }
 
 .card-cta {
@@ -672,6 +726,10 @@ h1 {
     font-size: 3.6rem;
   }
 
+  .cv-hero .role {
+    font-size: 1.45rem;
+  }
+
   .wip-sticker {
     top: -1.7rem;
     right: calc(50% - 10.2rem);
@@ -697,8 +755,45 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .cv-page {
+    overflow-x: hidden;
+  }
+
+  .cv-hero,
+  .cv-section,
+  .tagline,
+  .contact-box {
+    width: calc(100vw - 14vw);
+    max-width: calc(100vw - 14vw);
+  }
+
+  .cv-photo,
+  .contact-box {
+    box-shadow: none;
+  }
+
+  .chip-list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .chip {
+    text-align: center;
+  }
+
   h1 {
     font-size: 2.65rem;
+  }
+
+  .cv-hero .role {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    box-shadow: none;
+    font-size: 1.15rem;
+  }
+
+  .experience-card h3 {
+    font-size: 1.2rem;
   }
 
   .wip-sticker {
