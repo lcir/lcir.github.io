@@ -31,6 +31,11 @@ export function PortfolioPage() {
         {portfolioProjects.map((project) => (
           <Link key={project.id} href={`/portfolio/${project.id}`} className="portfolio-card-link">
             <article className="portfolio-card">
+              {project.image && (
+                <div className="portfolio-card-thumb">
+                  <img src={project.image} alt={project.title} loading="lazy" />
+                </div>
+              )}
               <div className="portfolio-card-header">
                 <div>
                   <p className="project-language">{project.language}</p>

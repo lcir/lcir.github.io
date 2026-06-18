@@ -16,6 +16,8 @@ export interface PortfolioProject {
   status: PortfolioStatus;
   language: string;
   stack: string[];
+  /** Optional screenshot shown on the card and the detail page. */
+  image?: string;
   summary: Record<Lang, string>;
   detail: Record<Lang, string>;
   focus: Record<Lang, string>;
@@ -33,6 +35,7 @@ export const portfolioProjects: PortfolioProject[] = [
     visibility: "private",
     status: "active",
     language: "TypeScript / Kotlin",
+    image: "/chordbook.png",
     stack: [
       "React",
       "Vite",

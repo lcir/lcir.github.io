@@ -74,6 +74,12 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
         )}
       </header>
 
+      {project.image && (
+        <figure className="project-shot">
+          <img src={project.image} alt={`${project.title} — screenshot`} />
+        </figure>
+      )}
+
       <section className="project-section">
         <h2>{lang === "cz" ? "O projektu" : "About"}</h2>
         {overview.map((paragraph, index) => (
