@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { portfolioProjects } from "../lib/portfolio";
 import { useLanguage } from "./LanguageProvider";
 import { SiteNav } from "./SiteNav";
@@ -28,37 +29,35 @@ export function PortfolioPage() {
 
       <section className="portfolio-grid" aria-label={lang === "cz" ? "Projekty" : "Projects"}>
         {portfolioProjects.map((project) => (
-          <article key={project.id} className="portfolio-card">
-            <div className="portfolio-card-header">
-              <div>
-                <p className="project-language">{project.language}</p>
-                <h2>{project.title}</h2>
+          <Link key={project.id} href={`/portfolio/${project.id}`} className="portfolio-card-link">
+            <article className="portfolio-card">
+              <div className="portfolio-card-header">
+                <div>
+                  <p className="project-language">{project.language}</p>
+                  <h2>{project.title}</h2>
+                </div>
+                <span className={`status status-${project.status}`}>
+                  {statusLabel(project.status, lang)}
+                </span>
               </div>
-              <span className={`status status-${project.status}`}>
-                {statusLabel(project.status, lang)}
-              </span>
-            </div>
-            <p className="summary">{project.summary[lang]}</p>
-            <p className="project-detail">{project.detail[lang]}</p>
-            <div className="project-focus">
-              <span>{lang === "cz" ? "Focus" : "Focus"}</span>
-              <p>{project.focus[lang]}</p>
-            </div>
-            <div className="stack">
-              {project.stack.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-            <div className="project-footer">
-              {project.repo ? (
-                <a href={project.repo} target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
-              ) : (
-                <span>{lang === "cz" ? "Soukromý repozitář" : "Private repository"}</span>
-              )}
-            </div>
-          </article>
+              <p className="summary">{project.summary[lang]}</p>
+              <p className="project-detail">{project.detail[lang]}</p>
+              <div className="project-focus">
+                <span>{lang === "cz" ? "Focus" : "Focus"}</span>
+                <p>{project.focus[lang]}</p>
+              </div>
+              <div className="stack">
+                {project.stack.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+              <div className="project-footer">
+                <span className="detail-cue">
+                  {lang === "cz" ? "Zobrazit detail →" : "View details →"}
+                </span>
+              </div>
+            </article>
+          </Link>
         ))}
       </section>
     </div>

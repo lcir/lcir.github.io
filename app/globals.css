@@ -597,8 +597,182 @@ h1 {
 .project-footer {
   display: flex;
   justify-content: flex-end;
+  gap: 1.1rem;
   min-height: 1.2rem;
   color: var(--accent);
+}
+
+/* Clickable project cards */
+.portfolio-card-link {
+  display: block;
+  color: inherit;
+}
+
+.portfolio-card-link .portfolio-card {
+  height: 100%;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.portfolio-card-link:hover .portfolio-card,
+.portfolio-card-link:focus-visible .portfolio-card {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: rgba(242, 201, 76, 0.08);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.3);
+}
+
+.detail-cue {
+  color: var(--accent);
+}
+
+/* Project detail page */
+.project-back {
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+}
+
+.project-back a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.project-back a:hover {
+  color: var(--accent);
+}
+
+.project-detail-hero {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 1.8rem;
+}
+
+.project-detail-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-detail-titlebar .project-language {
+  margin-bottom: 0;
+}
+
+.project-detail-hero h1 {
+  margin-bottom: 1rem;
+}
+
+.project-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.button-link:hover {
+  transform: translateY(-2px);
+}
+
+.button-link.ghost {
+  background: transparent;
+  color: var(--accent);
+}
+
+.repo-note {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-url {
+  margin-top: 1rem;
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.project-url a {
+  color: var(--accent);
+}
+
+.project-url a:hover {
+  text-decoration: underline;
+}
+
+.project-section {
+  max-width: 50rem;
+  margin-bottom: 2.4rem;
+}
+
+.project-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.project-detail-text {
+  color: #d5d1c8;
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+}
+
+.project-highlights {
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.project-highlights li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: #d5d1c8;
+  line-height: 1.6;
+}
+
+.project-highlights li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.tech-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tech-table th,
+.tech-table td {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: top;
+}
+
+.tech-table th {
+  width: 12rem;
+  color: var(--accent);
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.tech-table td {
+  color: #d5d1c8;
 }
 
 .period {
@@ -779,6 +953,12 @@ h1 {
 
   .chip {
     text-align: center;
+  }
+
+  .tech-table th {
+    width: 9rem;
+    font-size: 0.72rem;
+    padding-right: 0.5rem;
   }
 
   h1 {
