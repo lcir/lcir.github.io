@@ -185,24 +185,70 @@ export const portfolioProjects: PortfolioProject[] = [
     }
   },
   {
-    id: "homas-telemetry-be",
+    id: "homas-telemetry",
     title: "Homas Telemetry",
+    url: "https://homas-telemetry.ptw.cz/",
     visibility: "private",
-    status: "private",
+    status: "active",
     language: "TypeScript",
-    stack: ["TypeScript", "Backend", "Telemetry", "Automation"],
+    image: "/homas-telemetry.png",
+    stack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Charts",
+      "REST API",
+      "Telemetry ingestion",
+      "Backend"
+    ],
     summary: {
-      cz: "Soukromý backendový projekt v organizaci PtWcz zaměřený na telemetry workflow.",
-      en: "A private PtWcz backend project focused on telemetry workflows."
+      cz: "Dashboard pro monitoring senzorů — sleduje teplotu, vlhkost a signál z více lokalit, s aktuálním stavem, historickými agregacemi a grafy.",
+      en: "A sensor-monitoring dashboard — tracks temperature, humidity and signal across multiple locations, with current state, historical aggregates and charts."
     },
     detail: {
-      cz: "Projekt používám jako prostor pro návrh backendových hranic, ingestion logiky a provozních kontrol nad technickými daty.",
-      en: "A project space for backend boundaries, ingestion logic, and operational checks around technical data."
+      cz: "Veřejně běžící dashboard na https://homas-telemetry.ptw.cz/ nad domácím telemetry stackem. Sbírá měření z více senzorových lokalit (např. garden, closet, kids) a pro každou ukazuje online stav, poslední měření (teplota, vlhkost, WiFi RSSI, čas) a historické agregace (průměr/min/max za 24 h, 7 d, 30 d) i průběhové grafy teploty a vlhkosti. Frontend je React SPA s Tailwind CSS, která čte data z telemetry REST API; backend přijímá a uchovává měření ze senzorů.",
+      en: "A publicly running dashboard at https://homas-telemetry.ptw.cz/ on top of a home telemetry stack. It collects readings from several sensor locations (e.g. garden, closet, kids) and for each shows online status, the latest reading (temperature, humidity, WiFi RSSI, timestamp) and historical aggregates (avg/min/max over 24 h, 7 d, 30 d) plus time-series charts for temperature and humidity. The frontend is a React SPA with Tailwind CSS that reads from a telemetry REST API; the backend ingests and stores sensor readings."
     },
     focus: {
-      cz: "Backend architektura, telemetry data, provozní kvalita",
-      en: "Backend architecture, telemetry data, operational quality"
-    }
+      cz: "Telemetry ingestion, časové řady a agregace, dashboard UI, domácí observabilita",
+      en: "Telemetry ingestion, time-series and aggregations, dashboard UI, home observability"
+    },
+    overview: {
+      cz: [
+        "Homas Telemetry je dashboard nad domácím senzorovým stackem — sbírá a zobrazuje měření z více lokalit (garden, closet, kids a další) na jednom místě.",
+        "Projekt běží v produkci na vlastní doméně a slouží jako prostor pro praktickou práci s ingestion telemetrie, časovými řadami a provozní observabilitou.",
+        "Frontend je React SPA s Tailwind CSS, která čte data z REST API; backend přijímá, uchovává a agreguje měření přicházející ze senzorů."
+      ],
+      en: [
+        "Homas Telemetry is a dashboard on top of a home sensor stack — it collects and displays readings from several locations (garden, closet, kids and more) in one place.",
+        "The project runs in production on its own domain and serves as a space for practical work with telemetry ingestion, time-series data and operational observability.",
+        "The frontend is a React SPA with Tailwind CSS that reads from a REST API; the backend ingests, stores and aggregates the readings coming from the sensors."
+      ]
+    },
+    highlights: {
+      cz: [
+        "Přehled „všech lokalit“ i detail jedné lokality přepínaný taby (Dashboard / garden / closet / kids / …).",
+        "Aktuální stav lokality: online/offline indikátor, čas posledního měření a poslední hodnoty (teplota, vlhkost, WiFi RSSI).",
+        "Historické agregace v oknech 24 h / 7 d / 30 d — průměr, minimum a maximum teploty i vlhkosti.",
+        "Průběhové grafy teploty a vlhkosti za zvolené období.",
+        "React SPA s Tailwind CSS nad telemetry REST API; backend řeší příjem a uchování měření ze senzorů."
+      ],
+      en: [
+        "An \"all locations\" overview plus a single-location detail, switched via tabs (Dashboard / garden / closet / kids / …).",
+        "Per-location current state: an online/offline indicator, last-update time and the latest values (temperature, humidity, WiFi RSSI).",
+        "Historical aggregates over 24 h / 7 d / 30 d windows — average, minimum and maximum for both temperature and humidity.",
+        "Time-series charts for temperature and humidity over the selected window.",
+        "A React SPA with Tailwind CSS over a telemetry REST API; the backend handles ingestion and storage of sensor readings."
+      ]
+    },
+    tech: [
+      { layer: { cz: "Frontend", en: "Frontend" }, value: "React + TypeScript (SPA)" },
+      { layer: { cz: "Vzhled", en: "Styling" }, value: "Tailwind CSS" },
+      { layer: { cz: "Vizualizace", en: "Visualization" }, value: "Průběhové grafy teploty a vlhkosti" },
+      { layer: { cz: "Obsah", en: "Content" }, value: "Telemetry REST API" },
+      { layer: { cz: "Backend", en: "Backend" }, value: "Ingestion a uchování měření ze senzorů" },
+      { layer: { cz: "Data", en: "Data" }, value: "Časové řady + agregace (24 h / 7 d / 30 d)" }
+    ]
   },
   {
     id: "plastic-models",
