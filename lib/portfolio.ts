@@ -196,58 +196,64 @@ export const portfolioProjects: PortfolioProject[] = [
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Charts",
-      "REST API",
-      "Telemetry ingestion",
-      "Backend"
+      "GraphQL",
+      "Fastify",
+      "MCP",
+      "PostgreSQL",
+      "Drizzle ORM"
     ],
     summary: {
-      cz: "Dashboard pro monitoring senzorů — sleduje teplotu, vlhkost a signál z více lokalit, s aktuálním stavem, historickými agregacemi a grafy.",
-      en: "A sensor-monitoring dashboard — tracks temperature, humidity and signal across multiple locations, with current state, historical aggregates and charts."
+      cz: "Domácí telemetry stack — senzory přes Node-RED ingestují do backendu, který data vystavuje přes GraphQL dashboard i MCP server pro AI asistenty.",
+      en: "A home telemetry stack — sensors ingest via Node-RED into a backend that exposes the data through a GraphQL dashboard and an MCP server for AI assistants."
     },
     detail: {
-      cz: "Veřejně běžící dashboard na https://homas-telemetry.ptw.cz/ nad domácím telemetry stackem. Sbírá měření z více senzorových lokalit (např. garden, closet, kids) a pro každou ukazuje online stav, poslední měření (teplota, vlhkost, WiFi RSSI, čas) a historické agregace (průměr/min/max za 24 h, 7 d, 30 d) i průběhové grafy teploty a vlhkosti. Frontend je React SPA s Tailwind CSS, která čte data z telemetry REST API; backend přijímá a uchovává měření ze senzorů.",
-      en: "A publicly running dashboard at https://homas-telemetry.ptw.cz/ on top of a home telemetry stack. It collects readings from several sensor locations (e.g. garden, closet, kids) and for each shows online status, the latest reading (temperature, humidity, WiFi RSSI, timestamp) and historical aggregates (avg/min/max over 24 h, 7 d, 30 d) plus time-series charts for temperature and humidity. The frontend is a React SPA with Tailwind CSS that reads from a telemetry REST API; the backend ingests and stores sensor readings."
+      cz: "Veřejně běžící dashboard na https://homas-telemetry.ptw.cz/ nad domácím telemetry stackem. Backend (Fastify + GraphQL Yoga + Drizzle/PostgreSQL) má dvě oddělené síťové plochy: privátní ingest (Node-RED → POST /ingest) a veřejné query API, které vystavuje GraphQL (s živými subscriptions) i MCP server. Frontend je React SPA (Apollo + graphql-ws + Recharts + Tailwind) zobrazující u každé lokality online stav, poslední měření (teplota, vlhkost, WiFi RSSI) a historické agregace s grafy. MCP plocha (`/mcp`, Streamable HTTP) dává AI asistentům přístup k telemetrii přes sadu toolů včetně dvou s LLM (ask_telemetry, summarize_anomalies).",
+      en: "A publicly running dashboard at https://homas-telemetry.ptw.cz/ on top of a home telemetry stack. The backend (Fastify + GraphQL Yoga + Drizzle/PostgreSQL) has two separated network surfaces: a private ingest API (Node-RED → POST /ingest) and a public query API exposing both GraphQL (with live subscriptions) and an MCP server. The frontend is a React SPA (Apollo + graphql-ws + Recharts + Tailwind) showing, per location, online status, the latest reading (temperature, humidity, WiFi RSSI) and historical aggregates with charts. The MCP surface (`/mcp`, Streamable HTTP) gives AI assistants access to the telemetry through a set of tools, two of them LLM-backed (ask_telemetry, summarize_anomalies)."
     },
     focus: {
-      cz: "Telemetry ingestion, časové řady a agregace, dashboard UI, domácí observabilita",
-      en: "Telemetry ingestion, time-series and aggregations, dashboard UI, home observability"
+      cz: "Telemetry ingestion, GraphQL i MCP query plocha, AI nad daty, dashboard UI, observabilita",
+      en: "Telemetry ingestion, GraphQL and MCP query surfaces, AI over data, dashboard UI, observability"
     },
     overview: {
       cz: [
-        "Homas Telemetry je dashboard nad domácím senzorovým stackem — sbírá a zobrazuje měření z více lokalit (garden, closet, kids a další) na jednom místě.",
-        "Projekt běží v produkci na vlastní doméně a slouží jako prostor pro praktickou práci s ingestion telemetrie, časovými řadami a provozní observabilitou.",
-        "Frontend je React SPA s Tailwind CSS, která čte data z REST API; backend přijímá, uchovává a agreguje měření přicházející ze senzorů."
+        "Homas Telemetry je domácí senzorový stack — měření z více lokalit (garden, closet, kids a další) tečou přes Node-RED do backendu a zobrazují se na jednom dashboardu.",
+        "Backend (Fastify + GraphQL Yoga + Drizzle/PostgreSQL) rozděluje provoz na privátní ingest plochu (POST /ingest) a veřejné query API, které stejná data vystavuje dvěma způsoby: jako GraphQL pro dashboard a jako MCP server pro AI asistenty.",
+        "Frontend je React SPA (Apollo Client, graphql-ws subscriptions, Recharts, Tailwind) s živými updaty; celý projekt slouží jako prostor pro praktickou práci s časovými řadami, AI nad daty a provozní observabilitou (Sentry, metriky)."
       ],
       en: [
-        "Homas Telemetry is a dashboard on top of a home sensor stack — it collects and displays readings from several locations (garden, closet, kids and more) in one place.",
-        "The project runs in production on its own domain and serves as a space for practical work with telemetry ingestion, time-series data and operational observability.",
-        "The frontend is a React SPA with Tailwind CSS that reads from a REST API; the backend ingests, stores and aggregates the readings coming from the sensors."
+        "Homas Telemetry is a home sensor stack — readings from several locations (garden, closet, kids and more) flow through Node-RED into a backend and surface on a single dashboard.",
+        "The backend (Fastify + GraphQL Yoga + Drizzle/PostgreSQL) splits traffic into a private ingest surface (POST /ingest) and a public query API that exposes the same data two ways: as GraphQL for the dashboard and as an MCP server for AI assistants.",
+        "The frontend is a React SPA (Apollo Client, graphql-ws subscriptions, Recharts, Tailwind) with live updates; the whole project is a space for practical work with time-series data, AI over data and operational observability (Sentry, metrics)."
       ]
     },
     highlights: {
       cz: [
-        "Přehled „všech lokalit“ i detail jedné lokality přepínaný taby (Dashboard / garden / closet / kids / …).",
-        "Aktuální stav lokality: online/offline indikátor, čas posledního měření a poslední hodnoty (teplota, vlhkost, WiFi RSSI).",
-        "Historické agregace v oknech 24 h / 7 d / 30 d — průměr, minimum a maximum teploty i vlhkosti.",
-        "Průběhové grafy teploty a vlhkosti za zvolené období.",
-        "React SPA s Tailwind CSS nad telemetry REST API; backend řeší příjem a uchování měření ze senzorů."
+        "Dashboard: přehled „všech lokalit“ i detail jedné lokality (taby), online/offline stav, poslední měření (teplota, vlhkost, WiFi RSSI) a historické agregace 24 h / 7 d / 30 d s grafy.",
+        "Oddělené síťové plochy backendu: privátní ingest (Node-RED → POST /ingest) a veřejné query API — bezpečnostně izolované vstupy a výstupy.",
+        "GraphQL API (Yoga) s živými subscriptions, které frontend přes graphql-ws průběžně dotahuje do grafů.",
+        "MCP server „homas-telemetry-mcp“ na `/mcp` přes Streamable HTTP se správou session — dává AI asistentům přímý přístup k telemetrii.",
+        "MCP tools: list_locations, list_metric_keys, query_readings (kurzorová stránkování), get_latest, get_aggregates (5m/15m/1h).",
+        "Dva AI tools nad MCP: ask_telemetry (otázka v přirozeném jazyce → bezpečný query plán a odpověď) a summarize_anomalies (shrnutí anomálií v okně) — postavené nad OpenAI.",
+        "Observabilita: MCP server i AI tools obalené Sentry a per-tool metrikami; coverage gates a CI v GitHub Actions."
       ],
       en: [
-        "An \"all locations\" overview plus a single-location detail, switched via tabs (Dashboard / garden / closet / kids / …).",
-        "Per-location current state: an online/offline indicator, last-update time and the latest values (temperature, humidity, WiFi RSSI).",
-        "Historical aggregates over 24 h / 7 d / 30 d windows — average, minimum and maximum for both temperature and humidity.",
-        "Time-series charts for temperature and humidity over the selected window.",
-        "A React SPA with Tailwind CSS over a telemetry REST API; the backend handles ingestion and storage of sensor readings."
+        "Dashboard: an \"all locations\" overview plus a single-location detail (tabs), online/offline status, the latest reading (temperature, humidity, WiFi RSSI) and 24 h / 7 d / 30 d historical aggregates with charts.",
+        "Separated backend network surfaces: a private ingest API (Node-RED → POST /ingest) and a public query API — security-isolated inputs and outputs.",
+        "A GraphQL API (Yoga) with live subscriptions that the frontend streams into the charts via graphql-ws.",
+        "An MCP server \"homas-telemetry-mcp\" at `/mcp` over Streamable HTTP with session management — giving AI assistants direct access to the telemetry.",
+        "MCP tools: list_locations, list_metric_keys, query_readings (cursor pagination), get_latest, get_aggregates (5m/15m/1h).",
+        "Two LLM-backed MCP tools: ask_telemetry (natural-language question → safe query plan and answer) and summarize_anomalies (anomaly summary over a window) — built on OpenAI.",
+        "Observability: the MCP server and AI tools are wrapped with Sentry and per-tool metrics; coverage gates and CI in GitHub Actions."
       ]
     },
     tech: [
-      { layer: { cz: "Frontend", en: "Frontend" }, value: "React + TypeScript (SPA)" },
-      { layer: { cz: "Vzhled", en: "Styling" }, value: "Tailwind CSS" },
-      { layer: { cz: "Vizualizace", en: "Visualization" }, value: "Průběhové grafy teploty a vlhkosti" },
-      { layer: { cz: "Obsah", en: "Content" }, value: "Telemetry REST API" },
-      { layer: { cz: "Backend", en: "Backend" }, value: "Ingestion a uchování měření ze senzorů" },
-      { layer: { cz: "Data", en: "Data" }, value: "Časové řady + agregace (24 h / 7 d / 30 d)" }
+      { layer: { cz: "Frontend", en: "Frontend" }, value: "React 19 + Apollo Client + graphql-ws + Recharts + Tailwind v4" },
+      { layer: { cz: "Backend", en: "Backend" }, value: "Node.js + TypeScript, Fastify 5, GraphQL Yoga" },
+      { layer: { cz: "MCP", en: "MCP" }, value: "MCP TypeScript SDK (Streamable HTTP) na /mcp, 7 toolů" },
+      { layer: { cz: "AI", en: "AI" }, value: "OpenAI — ask_telemetry, summarize_anomalies" },
+      { layer: { cz: "Databáze", en: "Database" }, value: "PostgreSQL + Drizzle ORM (časové řady + agregace)" },
+      { layer: { cz: "Ingest", en: "Ingest" }, value: "Privátní plocha: Node-RED → POST /ingest" },
+      { layer: { cz: "Observabilita", en: "Observability" }, value: "Sentry + metriky, coverage gates, GitHub Actions" }
     ]
   },
   {
