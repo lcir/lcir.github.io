@@ -282,24 +282,67 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     id: "boss-footswitch-codex",
-    title: "Boss Footswitch Codex",
+    title: "Katana Footswitch",
     repo: "https://github.com/lcir/boss-footswitch-codex",
     visibility: "public",
-    status: "experiment",
+    status: "active",
     language: "C",
-    stack: ["C", "Bluetooth", "Embedded", "Audio gear"],
+    image: "/katana-footswitch.png",
+    stack: ["C", "ESP-IDF", "BLE-MIDI", "Roland SysEx", "ESP32", "OpenSCAD"],
     summary: {
-      cz: "Bluetooth foot switch pro Boss Katana 50 GEN 3 s důrazem na nízkoúrovňovou implementaci.",
-      en: "A Bluetooth foot switch for Boss Katana 50 GEN 3 with a low-level implementation focus."
+      cz: "DIY bezdrátový footswitch pro Boss Katana-50 Gen 3: ESP32 firmware, reverse-engineered SysEx komunikace a modulární 3D tisknutelná konstrukce.",
+      en: "A DIY wireless footswitch for the Boss Katana-50 Gen 3: ESP32 firmware, reverse-engineered SysEx communication and a modular 3D-printable enclosure."
     },
     detail: {
-      cz: "Experiment s ovládáním hudebního vybavení přes embedded zařízení a Bluetooth komunikaci.",
-      en: "An experiment in controlling music gear through embedded hardware and Bluetooth communication."
+      cz: "Praktický embedded ovladač, který přes BT-DUAL přepíná presety a efekty aparátu, čte jejich stav zpět a stejnou řídicí vrstvu zpřístupňuje fyzickými tlačítky i lokálním webovým rozhraním.",
+      en: "A practical embedded controller that switches amp presets and effects through BT-DUAL, reads their state back, and exposes the same control layer through physical switches and a local web interface."
     },
     focus: {
-      cz: "Bluetooth protokol, embedded C, ovládání hardware",
-      en: "Bluetooth protocol, embedded C, hardware control"
-    }
+      cz: "Reverse engineering proprietárního protokolu, embedded C, spolehlivé fyzické ovládání a návrh tisknutelného hardware",
+      en: "Proprietary protocol reverse engineering, embedded C, reliable physical control and printable hardware design"
+    },
+    overview: {
+      cz: [
+        "Katana Footswitch je samostatný bezdrátový ovladač pro kytarové kombo Boss Katana-50 Gen 3. ESP32 se přes adaptér BT-DUAL připojí ke standardní službě BLE-MIDI a dovolí přepínat presety A1/A2/B1/B2, PANEL, pět efektů a Variation bez telefonu nebo notebooku.",
+        "Vývoj zahrnoval reverse engineering komunikace BOSS Tone Studio. Ukázalo se, že běžné MIDI Program Change a Control Change příkazy jsou přes BT-DUAL neúčinné; firmware proto vstupuje do editor mode a používá stejné Roland SysEx DT1/RQ1 rámce jako oficiální aplikace. Z aparátu zároveň zpracovává stavové odpovědi a spontánní změny pro aktualizaci ovladače a webového UI.",
+        "Hardware má šest momentových footswitchů a dvě podporované zobrazovací varianty: sedm adresovatelných RGB indikátorů, nebo kompaktní 128×32 OLED. Třídílná parametrická konstrukce v OpenSCAD se vejde na Prusa MK4 a obsahuje tisknutelné panely, držák ESP32, bezšroubový OLED carrier i testovací díly před plným tiskem."
+      ],
+      en: [
+        "Katana Footswitch is a standalone wireless controller for the Boss Katana-50 Gen 3 guitar amp. An ESP32 connects to the standard BLE-MIDI service through the BT-DUAL adapter and switches presets A1/A2/B1/B2, PANEL, five effects and Variation without a phone or laptop.",
+        "Development included reverse engineering the communication used by BOSS Tone Studio. Standard MIDI Program Change and Control Change messages proved inert over BT-DUAL, so the firmware enters editor mode and uses the same Roland SysEx DT1/RQ1 frames as the official app. It also consumes amp state responses and unsolicited changes to keep the controller and web UI updated.",
+        "The hardware combines six momentary footswitches with two supported display variants: seven addressable RGB indicators, or a compact 128×32 OLED. Its three-piece parametric OpenSCAD enclosure fits a Prusa MK4 and includes printable panels, an ESP32 mount, a screwless OLED carrier and small fit-test parts for validation before a full print."
+      ]
+    },
+    highlights: {
+      cz: [
+        "Jedna action pipeline pro fyzická tlačítka i webové UI — presety, PANEL, pět efektů, Variation, režimy a opětovná synchronizace.",
+        "BLE-MIDI transport pro KATANA 3 MIDI s párováním, discovery, notifications a bezpečným odpojením.",
+        "Host-testované sestavování a parsování Roland SysEx rámců; mapování vychází z reálně zachycené komunikace BOSS Tone Studio.",
+        "Zpětná vazba z aparátu pro patch, přepínače efektů, jejich barvy a Variation; stav se promítá do displeje, LED a webového klienta.",
+        "Wi-Fi provisioning přes vlastní SoftAP, uložení přístupu v NVS, REST API, WebSocket broadcast a mobilní webové rozhraní ze SPIFFS.",
+        "Volitelný SSD1306 OLED se autodetekuje při startu; jeden firmware tak obslouží OLED i LED variantu.",
+        "Modulární OpenSCAD enclosure o rozměru přibližně 330 × 110 × 49 mm, exportované STL a montážní díly připravené pro 3D tisk."
+      ],
+      en: [
+        "One action pipeline shared by physical switches and the web UI — presets, PANEL, five effects, Variation, modes and resynchronization.",
+        "BLE-MIDI transport for KATANA 3 MIDI with pairing, discovery, notifications and a safe disconnect sequence.",
+        "Host-tested Roland SysEx frame building and parsing, mapped from captured BOSS Tone Studio communication.",
+        "Amp feedback for patch, effect switches, effect colours and Variation, reflected across the display, LEDs and web client.",
+        "Wi-Fi provisioning through a dedicated SoftAP, credentials in NVS, a REST API, WebSocket broadcasts and a mobile web UI served from SPIFFS.",
+        "An optional SSD1306 OLED is auto-detected at boot, allowing one firmware build to serve both OLED and LED variants.",
+        "A modular OpenSCAD enclosure measuring approximately 330 × 110 × 49 mm, with exported STL and assembly parts ready for 3D printing."
+      ]
+    },
+    tech: [
+      { layer: { cz: "Firmware", en: "Firmware" }, value: "C + ESP-IDF 6.x (ESP32-WROOM-32)" },
+      { layer: { cz: "Komunikace s aparátem", en: "Amp communication" }, value: "Bluetooth LE, BLE-MIDI, Roland SysEx DT1/RQ1 přes BT-DUAL" },
+      { layer: { cz: "Fyzické ovládání", en: "Physical controls" }, value: "6× momentary footswitch, GPIO debounce a long-press kombinace" },
+      { layer: { cz: "Výstup", en: "Output" }, value: "SSD1306 128×32 OLED / 7× WS2812B RGB LED" },
+      { layer: { cz: "Webové rozhraní", en: "Web interface" }, value: "REST + WebSocket, HTML/CSS/JavaScript ze SPIFFS" },
+      { layer: { cz: "Síť a konfigurace", en: "Networking & setup" }, value: "Wi-Fi SoftAP/STA provisioning + NVS" },
+      { layer: { cz: "Mechanika", en: "Mechanical design" }, value: "Parametrický OpenSCAD, modulární STL pro Prusa MK4" },
+      { layer: { cz: "Ověření", en: "Verification" }, value: "Host testy protokolu, stavového modelu a OLED rendereru" }
+    ]
   },
   {
     id: "boss-footswitch-claude",
